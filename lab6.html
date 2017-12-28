@@ -7,26 +7,40 @@
     <link rel="stylesheet" href="./bootstrap.min.css">
     <title>Lab 6</title>
     <style>
-        .box {
+        #box, #box-2 {
             margin: 0 auto;
             width: 500px;
+            display: none;
         }
     </style>
 </head>
 <body>
-    
-    <div class="box">
+    <button onclick="exercise1()">Exercise 1</button>
+    <button onclick="exercise2()">Exercise 2</button>
+    <div id="box">
         <div id="output">
 
         </div>
         <div>
-            <form onsubmit="event.preventDefault();">
-                <div class="form-group">
+            <form name="formOne" onsubmit="event.preventDefault(); saveNew();">
+                <div>
                     <label></label>
-                    <input class="form-control">
+                    <input name="bmi" type="text">
+                    <input type="submit" value="save New BMI" >
                 </div>
-                <input type>
-                
+            </form>
+            <button onclick="showData();">Show Data</button>
+            <button onclick="clearData();">Clear Data</button><br>
+            <button onclick="showHealth();">Show Health</button>
+        </div>
+    </div>
+    <div id="box-2">
+        <div id="output-2"></div>
+        <div>
+            <form name="formTime" onsubmit="event.preventDefault(); validateTime();">
+                <label>Enter time in second: </label>
+                <input type="text" name="time"><br>
+                <input type="submit" value="Show Time">
             </form>
         </div>
     </div>
@@ -51,9 +65,10 @@
                 }
             }
         }
-        
+
         var output = document.getElementById('output');
-        output.innerHTML = 
+        function showData(){
+            output.innerHTML = 
         `
             <table class="table table-bordered">
                 <tr>
@@ -66,7 +81,58 @@
                     <th>BMI:</th><td>` + person.bmi +  `</td>
                 </tr>
             </table>
-        `
+
+        `;
+        }
+
+        function clearData(){
+            output.innerHTML = '';
+        }
+        
+        function showHealth() {
+            person.showHealth();
+        }
+        function saveNew() {
+                var numOne = parseFloat(document.forms['formOne']['bmi'].value);
+                if (isNaN(numOne)) {
+                    alert('First input is not a number');
+                } else {
+                    person.bmi = numOne;
+                    clearData();
+                    showData();
+                }
+            }
+
+        function exercise1() { 
+            document.getElementById('box-2').style.display = "none";
+            document.getElementById('box').style.display = "block";
+        }
+
+        function exercise2() { 
+            document.getElementById('box').style.display = "none";
+            document.getElementById('box-2').style.display = "block";
+        }
+
+        function validateTime() {
+                var time = parseFloat(document.forms['formTime']['time'].value);
+                if (isNaN(time)) {
+                    alert('First input is not a number');
+                } else {
+    
+                    var sec = time % 60;
+                    console.log('sec: ' + sec);
+                    time = Math.floor(time/60);
+                    var min = time % 60;
+                    console.log('min: ' + min);
+                    time = Math.floor(time/60);
+                    var hour = time;
+                    console.log('Hour: ' + hour);
+                    document.getElementById('output-2').innerHTML = 'Time entered is ' +
+                        hour + ' hours, ' + min + ' minutes and ' + sec + ' seconds';
+                }
+            }
+
+
            
     </script>
 </body>
