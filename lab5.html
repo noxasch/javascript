@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <title>Lab 5</title>
+    <style>
+        .box {
+            margin: 0 auto;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div id="output">
+
+        </div>
+        <form name="formOne" onsubmit="event.preventDefault(); validateForm()">
+            <div class="form-group">
+                <label>First Number</label>
+                <input name="numOne" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <label>Second Number</label>
+                <input name="numTwo" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Calculate">
+            </div>
+        </form>
+    </div>
+    
+    
+    <script>
+        function validateForm() {
+            var numOne = document.forms['formOne']['numOne'].value;
+            var numTwo = document.forms['formOne']['numTwo'].value;
+            if (isNaN(numOne)) {
+                alert('First input is not a number');
+            } else if (isNaN(numTwo)){
+                alert('Second input is not a number');
+            } else {
+                var sum = 1.0 * (parseFloat(numOne)  + parseFloat(numTwo));
+                var diff = 1.0 * (parseFloat(numOne)  - parseFloat(numTwo));
+                var mul = 1.0 * (parseFloat(numOne)  * parseFloat(numTwo));
+                var div = 1.0 * (parseFloat(numOne)  / parseFloat(numTwo));
+                document.getElementById('output').innerHTML = numOne + '+' + numTwo + '=' + sum + '<br>' +
+                numOne + '-' + numTwo + '=' + diff + '<br>' +
+                numOne + '*' + numTwo + '=' + mul + '<br>' +
+                numOne + '/' + numTwo + '=' + div + '<br>';
+            }
+        }
+           
+    </script>
+</body>
+</html>

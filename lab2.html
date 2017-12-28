@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 2</title>
+    <style>
+        .container {
+            margin: 100px auto 0 auto;
+            width: 500px;
+            text-align: center;
+        }
+
+        #circle, #bmi {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #666666;
+            border-radius: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <button id="calccircle" onclick="calcCircle()">Calculate Circle</button><br>
+        <button id="calcbmi" onclick="calcBMI()">Calculate BMI</button>
+        
+        <div id="circle">
+                Area: <span id="area"></span><br>
+                Circumference : <span id="circ"></span><br>
+                Volume: <span id="vol"></span>
+        </div>
+        <div id="bmi">
+                BMI: <span id="cbmi"></span><br>
+        </div>
+        
+    </div>
+    <script>
+
+        function calcCircle() {
+            var radius = prompt("Enter radius:");
+            var area = Math.PI * Math.pow(radius, 2);
+            var circ = 2 * Math.PI * radius;
+            var vol = (4 / 3) * Math.PI * Math.pow(radius, 3);
+            document.getElementById('circle').style.display = 'block';
+            document.getElementById('area').innerText = area;
+            document.getElementById('circ').innerText = area;
+            document.getElementById('vol').innerText = area;
+        }
+
+        function calcBMI() {
+            var w = prompt("Enter Your weight:");
+            var h = prompt("Enter Your height:");
+            var bmi = w / Math.pow(h, 2);
+            document.getElementById('bmi').style.display = 'block';
+            document.getElementById('cbmi').innerText = bmi;
+        }
+    </script>
+</body>
+</html>

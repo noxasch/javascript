@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+	<title>Document</title>
+	<style>
+		div.table {
+			margin: 50px auto 0 auto;
+			max-width: 300px;
+		}
+
+		header {
+			background-color: #721c72;
+			height: 100px;
+			position: relative;
+		}
+
+		header h1 {
+			color: #e6e1e1;
+		}
+
+		nav {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		nav ul {
+			list-style-type: none;
+		}
+
+		nav ul li {
+			padding-top: 10px;
+			display: inline-block;
+			margin-right: 15px;
+		}
+
+		nav ul li a {
+			font-size: 18px;
+			color: #e6e1e1;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+
+		nav ul li a:hover {
+			text-decoration: none;
+			color: #ffffff;
+			border-bottom: 2px solid #ffffff;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<h1>Welcome To JavaScript</h1>
+		<nav>
+			<ul>
+				<li><a href="javascript:void(0)">Home</a></li>
+				<li><a href="javascript:void(0)">About</a></li>
+				<li><a href="javascript:void(0)">Portfolio</a></li>
+				<li><a href="javascript:void(0)">Blog</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div id="output">
+		
+	</div>
+	<div>
+		<button id="btn">Kimi</button>
+	</div>
+    <div class="table">
+        <table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>Name</th>
+					<th>Award</th>
+				</tr>
+				
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td><td id="name">Harith Iskander</td><td>Gold</td>
+				</tr>
+				<tr>
+					<td>2</td><td>Jason Leong</td><td>Silver</td>
+				</tr>
+				<tr>
+					<td>3</td><td>Saiful Apek</td><td>Bronze</td>
+				</tr>
+			</tbody>
+        </table>
+	</div>
+	<div class="table">
+			<table class="table table-bordered">
+					<tbody>
+					<tr>
+						<th>Assignment</th>
+						<td>Experiment:
+							<ol>
+								<li>80 Marks</li>
+								<li>20 Marks</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<th>Name</th>
+						<td>Question on:
+							<ul>
+								<li>SQL (25 marks)</li>
+								<li>PHP (25 marks)</li>
+								<li>JavaScript (50 marks)</li>
+							</ul>
+							Contribution of Total 25%
+						</td>
+					</tr>
+					<tr>
+						<th>Final</th>
+						<td>
+							<table class="table table-bordered">
+								<tr>
+									<th>Question</th>
+									<th>Topic</th>
+									<th>Marks</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>SQL</td>
+									<td>25</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>PHP</td>
+									<td>JavaScript</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>JavaScript</td>
+									<td>25</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>CSS</td>
+									<td>25</td>
+								</tr>
+							</table>
+							Contribution of total 25%
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script>
+			//document.getElementById('name').innerHTML = 'Ehsan';
+			console.log(Date());
+
+			// var name = prompt("ich heiBe");
+			// console.log(name);
+			// document.getElementById('name').innerHTML = name;
+			console.log("apple" > "pineapple");
+			console.log(undefined == null);
+			console.log(null == "\n0\n");
+			var objPrototype = {
+				"name":"John Wick",
+				"age":"41",
+			}
+
+			arrJson = [
+				{
+					"race":"elf",
+					"job":"archer "
+				},
+				{
+					"race":"orc",
+					"job":"barbarian"
+				}
+
+			]
+			console.log(objPrototype);
+			console.log(arrJson);
+			document.getElementById('output').innerText = objPrototype["name"];
+			document.getElementById('btn').onclick = (() => {
+				document.getElementById('name').innerHTML = "Hakimie"
+			})
+
+			window.addEventListener("keydown", (event) => {
+				console.log(event);
+
+				switch (event.key) {
+					case "b":
+						document.getElementById('name').innerHTML = "Kimie berak"
+						getKey();
+						break;
+				}
+
+			})
+
+
+
+		</script>
+</body>
+</html>

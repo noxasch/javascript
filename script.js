@@ -1,0 +1,17 @@
+document.getElementById('name').style.fontSize = '12px';
+console.log(undefined + 1);
+console.log("" + 1 + 0);
+console.log("" - 1 + 0);
+console.log(true + false);
+console.log(6 / "2");
+console.log("2" + "3");
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
+console.log(true + false);
